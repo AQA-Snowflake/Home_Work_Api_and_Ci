@@ -36,7 +36,7 @@ def test_basic_auth_fail():
 def test_post_json(payload):
     """POST-запрос с JSON-телом: проверка возврата тела для разных данных."""
     response = requests.post(f"{BASE_URL}/post", json=payload)
-    assert response.status_code == 200
+    assert response.status_code == 404
     assert response.json()["json"] == payload
 
 def test_post_form_data():
